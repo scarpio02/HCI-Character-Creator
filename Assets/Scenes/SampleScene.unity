@@ -714,6 +714,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartScreenPanel: {fileID: 236703081}
+  StartB: {fileID: 1284596053}
+  TitleText: {fileID: 2137811375}
+  ButtonText: {fileID: 1383554091}
 --- !u!114 &1284596056
 MonoBehaviour:
   m_ObjectHideFlags: 0
