@@ -2,8 +2,10 @@
   "dependencies": {
     "com.unity.collab-proxy": "2.0.7",
     "com.unity.feature.development": "1.0.1",
+    "com.unity.formats.alembic": "2.3.3",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.5",
+    "com.unity.toolchain.macos-arm64-linux-x86_64": "2.0.0",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.0",
     "com.unity.modules.ai": "1.0.0",
