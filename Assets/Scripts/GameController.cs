@@ -8,6 +8,7 @@ using UnityEditor.Animations;
 public class GameController : MonoBehaviour
 {
     public List<Category> categories = new List<Category>();
+    public int psychTokens = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +49,17 @@ public class GameController : MonoBehaviour
     public void SelectTrait(int traitNum){
         int categoryNum = traitNum / 3;
         int traitIndex = traitNum % 3;
-        categories[categoryNum].newSelect(traitIndex);
+        psychTokens += categories[categoryNum].getSelected();
+        if (categories[categoryNum].getTraitPT(traitIndex) >= psychTokens)
+        {
+            categories[categoryNum].newSelect(traitIndex);
+        }
+        psychTokens -= categories[categoryNum].getSelected();
+
     }
+
+
+
 }
 
 /*
@@ -62,74 +72,85 @@ public class GameController : MonoBehaviour
  * The classes are currently set up for another script on an object.
  */
 
- /*
-    Josh's Notes:
-    I've wrapped the trait class within the category class, and added a few functions for making selections.
-    Currently, the information flow is intended as such:
-    The user clicks on one of the buttons in the ui. That button has a value that it passes in to the GameController via the SelectTrait function.
-    The GameController then uses that value to determine which category and trait to select. (This is done by division and modulo operations.)
-    The buttons for traits are numbered 0-14, starting with tier 0 of openmindedness, going to tier 2 of neuroticism in a clockwise circle.
-    The GameController then calls the newSelect function on the category, which deselects all traits in the category except for the one selected.
-    It also selects the passed in trait.
-    I have also added descriptions for the categories and traits in the start function of the GameController.
-    I have not implemented any features regarding token cost, aside from a couple mentions of the cost in functions in case they're needed later.
-    This implementation will be left to whoever comes next.
-    If you have any questions, feel free to reach out, hopefully I will remember my code :P
+/*
+   Josh's Notes:
+   I've wrapped the trait class within the category class, and added a few functions for making selections.
+   Currently, the information flow is intended as such:
+   The user clicks on one of the buttons in the ui. That button has a value that it passes in to the GameController via the SelectTrait function.
+   The GameController then uses that value to determine which category and trait to select. (This is done by division and modulo operations.)
+   The buttons for traits are numbered 0-14, starting with tier 0 of openmindedness, going to tier 2 of neuroticism in a clockwise circle.
+   The GameController then calls the newSelect function on the category, which deselects all traits in the category except for the one selected.
+   It also selects the passed in trait.
+   I have also added descriptions for the categories and traits in the start function of the GameController.
+   I have not implemented any features regarding token cost, aside from a couple mentions of the cost in functions in case they're needed later.
+   This implementation will be left to whoever comes next.
+   If you have any questions, feel free to reach out, hopefully I will remember my code :P
+*/
+
+/*
+    Santiago's Notes:
+    Added token pt tracking with token costs. Also checks that selection only occurs if there's enough tokens available.
+    Came up with ideas for possible images for each trait. Will work further on how the actual character generation/saving will look.
  */
 public class Category
 {
     string categoryName = "";
-    List<Trait> traits = new List<Trait>();
+    public List<Trait> traits = new List<Trait>();
     int selected = 0;
 
     public class Trait
-{   
-    int pT = 0;
-    string name = "";
-    string description = "";
-    bool isSelected;
-    Image img;
-    public Trait() { }
+    {   
+        int pT = 0;
+        string name = "";
+        string description = "";
+        bool isSelected;
+        Image img;
+        public Trait() { }
 
-    public Trait(int _pT, string _name, string _description, Image _img)
-    {
-        this.pT = _pT;
-        this.name = _name;
-        this.description = _description;
-        this.isSelected = false;
-        this.img = _img;
-    }
+        public Trait(int _pT, string _name, string _description, Image _img)
+        {
+            this.pT = _pT;
+            this.name = _name;
+            this.description = _description;
+            this.isSelected = false;
+            this.img = _img;
+        }
 
-    public string GetName()
-    {
-        return name;
-    }
+        public string GetName()
+        {
+            return name;
+        }
 
-    public string GetDescription()
-    {
-        return description;
-    }
+        public string GetDescription()
+        {
+            return description;
+        }
 
-    public string GetPT()
-    {
-        return pT.ToString();
-    }
+        public string GetPTString()
+        {
+            return pT.ToString();
+        }
 
-    public Image GetImage()
-    {
-        return img;
-    }
+        public int GetPT()
+        {
+            return pT;
+        }
 
-    public int Select(){
-        isSelected = true;
-        return pT;
-    }
+        public Image GetImage()
+        {
+            return img;
+        }
 
-    public int Deselect(){
-        isSelected = false;
-        return pT;
+        public int Select(){
+            isSelected = true;
+            return pT;
+        }
+
+        public int Deselect(){
+            isSelected = false;
+            return pT;
+        }
     }
-}
     
     public Category() { }
 
@@ -148,6 +169,16 @@ public class Category
                 traits[i].Select();
             }
         }
+    }
+
+    public int getSelected()
+    {
+        return selected;
+    }
+
+    public int getTraitPT(int traitNum)
+    {
+        return traits[traitNum].GetPT();
     }
 
 }
