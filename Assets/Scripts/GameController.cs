@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public List<Category> categories = new List<Category>();
     public int psychTokens = 6;
     public GameObject ptWarningPanel;
-    
+    bool canSave = false; // only switches to true when player has chosen trait in each category
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +70,18 @@ public class GameController : MonoBehaviour
         return psychTokens;
     }
 
+    public void checkCategories()
+    {
+        canSave = true;
+        for (int i = 0; i < categories.Count; i++)
+        {
+            if (!categories[i].getIsTraitSelected())
+            {
+                canSave = false;
+            }
+        }
+    }
+
 }
 
 /*
@@ -109,6 +121,7 @@ public class Category
     string categoryName = "";
     public List<Trait> traits = new List<Trait>();
     int selected = 0;
+    bool isTraitSelected = false;
 
     public class Trait
     {   
@@ -176,6 +189,7 @@ public class Category
     }
 
     public void newSelect(int traitNum){
+        isTraitSelected = true;
         selected = traitNum;
         for (int i = 0; i < traits.Count; i++){
             if (i != traitNum){
@@ -197,7 +211,10 @@ public class Category
         return traits[traitNum].GetPT();
     }
 
-
+    public bool getIsTraitSelected()
+    {
+        return isTraitSelected;
+    }
 
 }
 
