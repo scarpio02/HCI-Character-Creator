@@ -30,7 +30,7 @@ public class PTMeter : MonoBehaviour
         //}
     }
 
-    void updateMeter()
+    public void updateMeter()
     {
         pt = GameObject.Find("Backend").GetComponent<GameController>().getPsychTokens();
         ptMeter.value = pt / (float)maxPT;

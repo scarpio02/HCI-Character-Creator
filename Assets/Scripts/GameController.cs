@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 {
     public List<Category> categories = new List<Category>();
     public int psychTokens = 6;
+    public GameObject ptWarningPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +55,12 @@ public class GameController : MonoBehaviour
         {
             categories[categoryNum].newSelect(traitIndex);
         }
+        else
+        {
+            ptWarningPanel.SetActive(true);
+        }
         psychTokens -= categories[categoryNum].getSelected();
+        GameObject.Find("GreenBar").GetComponent<PTMeter>().updateMeter();
 
     }
 
@@ -93,6 +99,8 @@ public class GameController : MonoBehaviour
 /*
     Santiago's Notes:
     Added token pt tracking with token costs. Also checks that selection only occurs if there's enough tokens available.
+    Added a meter for the psych tokens that will update when selecting traits. I plan to add a warning message when the user
+    tries to use more tokens than they have.
     Came up with ideas for possible images for each trait. Will work further on how the actual character generation/saving will look.
  */
 public class Category
