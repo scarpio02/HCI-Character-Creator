@@ -58,7 +58,10 @@ public class GameController : MonoBehaviour
 
     }
 
-
+    public int getPsychTokens()
+    {
+        return psychTokens;
+    }
 
 }
 
