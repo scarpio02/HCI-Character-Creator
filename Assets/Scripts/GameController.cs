@@ -82,6 +82,26 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void SaveGame()
+    {
+        SaveSystem.SaveGame(categories);
+    }
+
+    public void LoadGame()
+    {
+        GameData data = SaveSystem.LoadGame();
+
+        psychTokens = 6;
+
+        for (int i = 0; i < data.traits.Length; i++)
+        {
+            if (data.traits[i])
+            {
+                SelectTrait(i);
+            }
+        }
+    }
+
 }
 
 /*
@@ -166,6 +186,11 @@ public class Category
         public GameObject GetImage()
         {
             return img;
+        }
+
+        public bool GetIsSelected()
+        {
+            return isSelected;
         }
 
         public int Select(){
