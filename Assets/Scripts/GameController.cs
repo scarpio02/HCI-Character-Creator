@@ -10,11 +10,14 @@ public class GameController : MonoBehaviour
     public List<Category> categories = new List<Category>();
     public int psychTokens = 6;
     public GameObject ptWarningPanel;
+    public GameObject saveConfirmationPanel;
     bool canSave = false; // only switches to true when player has chosen trait in each category
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.Find("Save").GetComponent<Button>().interactable = false;
+
         List<Category.Trait> traits1 = new List<Category.Trait>();
         traits1.Add(new Category.Trait(0, "Closed-minded", "Characters with this trait are resistant to new experiences and find it hard to think outside the box. They tend to stick to what they know and avoid novel situations.", GameObject.Find("Openness0")));
         traits1.Add(new Category.Trait(1, "Open-minded", "These characters are curious about the world and are open to trying new things, but may not always seek them out actively.", GameObject.Find("Openness1")));
@@ -62,6 +65,7 @@ public class GameController : MonoBehaviour
         }
         psychTokens -= categories[categoryNum].getSelected();
         GameObject.Find("GreenBar").GetComponent<PTMeter>().updateMeter();
+        checkCategories();
 
     }
 
@@ -80,11 +84,17 @@ public class GameController : MonoBehaviour
                 canSave = false;
             }
         }
+
+        if (canSave)
+        {
+            GameObject.Find("Save").GetComponent<Button>().interactable = true;
+        }
     }
 
     public void SaveGame()
     {
         SaveSystem.SaveGame(categories);
+        saveConfirmationPanel.SetActive(true);
     }
 
     public void LoadGame()
