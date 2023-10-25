@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public int psychTokens = 6;
     public GameObject ptWarningPanel;
     public GameObject saveConfirmationPanel;
+    public GameObject loadConfirmationPanel;
     bool canSave = false; // only switches to true when player has chosen trait in each category
 
     // Start is called before the first frame update
@@ -100,7 +101,7 @@ public class GameController : MonoBehaviour
     public void LoadGame()
     {
         GameData data = SaveSystem.LoadGame();
-
+        loadConfirmationPanel.SetActive(true);
         psychTokens = 6;
 
         for (int i = 0; i < data.traits.Length; i++)
