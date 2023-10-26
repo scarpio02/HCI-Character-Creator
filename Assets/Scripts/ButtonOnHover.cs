@@ -9,6 +9,7 @@ public class ButtonOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     // Start is called before the first frame update
 
     public GameObject[] traits;
+    public GameObject label;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class ButtonOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             trait.SetActive(true);
         }
+        label.SetActive(false);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -29,6 +31,7 @@ public class ButtonOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             trait.SetActive(false);
         }
+        label.SetActive(true);
     }
 
     // Update is called once per frame
