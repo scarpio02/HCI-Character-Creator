@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
         GameObject.Find("Save").GetComponent<Button>().interactable = false;
 
         List<Category.Trait> traits1 = new List<Category.Trait>();
-        traits1.Add(new Category.Trait(0, "Closed-minded", "Characters with this trait are resistant to new experiences and find it hard to think outside the box. They tend to stick to what they know and avoid novel situations.", GameObject.Find("Openness0")));
+        traits1.Add(new Category.Trait(0, "Close-minded", "Characters with this trait are resistant to new experiences and find it hard to think outside the box. They tend to stick to what they know and avoid novel situations.", GameObject.Find("Openness0")));
         traits1.Add(new Category.Trait(1, "Open-minded", "These characters are curious about the world and are open to trying new things, but may not always seek them out actively.", GameObject.Find("Openness1")));
         traits1.Add(new Category.Trait(2, "Visionary Explorer", "Characters with this trait have an insatiable curiosity. They are constantly seeking out new experiences, ideas, and challenges. They are often seen as innovators and thought leaders.", GameObject.Find("Openness2")));
         categories.Add(new Category("Openness", traits1));
@@ -252,6 +252,10 @@ public class Category
         return isTraitSelected;
     }
 
+    public string getName()
+    {
+        return categoryName;
+    }
 }
 
 
