@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8977,7 +8977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: bb46c961a400e4a41a86289b6904c87e, type: 3}
+  m_Texture: {fileID: 2800000, guid: cc8974a48228b45a4a651fc39b209bd0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -12022,8 +12022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ad39f2b02a24b3590e6547d0eabdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceSetNames:
-  - 
 --- !u!4 &2488844437876845552
 Transform:
   m_ObjectHideFlags: 0
@@ -12229,34 +12227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6983ab2008f7a9f499b3f8cd6bec328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  streamSource: 1
-  streamDescriptor: {fileID: 0}
-  embeddedStreamDescriptor:
-    pathToAbc: 
-    settings:
-      normals: 1
-      tangents: 1
-      cameraAspectRatio: 2
-      importVisibility: 1
-      scaleFactor: 0.01
-      swapHandedness: 1
-      flipFaces: 0
-      interpolateSamples: 1
-      importPointPolygon: 1
-      importLinePolygon: 1
-      importTrianglePolygon: 1
-      importXform: 1
-      importCameras: 1
-      importMeshes: 1
-      importPoints: 0
-      importCurves: 1
-      createCurveRenderers: 0
-    mediaStartTime: 0
-    mediaEndTime: 0
-  startTime: -3.4028235e+38
-  endTime: 3.4028235e+38
-  currentTime: 0
-  vertexMotionScale: 1
 --- !u!4 &3354493690013309497
 Transform:
   m_ObjectHideFlags: 0
@@ -12947,34 +12917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6983ab2008f7a9f499b3f8cd6bec328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  streamSource: 0
-  streamDescriptor: {fileID: -6680428020140535932, guid: 29a6f2f05cbff8c448f64ea8e256cd7e, type: 3}
-  embeddedStreamDescriptor:
-    pathToAbc: 
-    settings:
-      normals: 1
-      tangents: 1
-      cameraAspectRatio: 2
-      importVisibility: 1
-      scaleFactor: 0.01
-      swapHandedness: 1
-      flipFaces: 0
-      interpolateSamples: 1
-      importPointPolygon: 1
-      importLinePolygon: 1
-      importTrianglePolygon: 1
-      importXform: 1
-      importCameras: 1
-      importMeshes: 1
-      importPoints: 0
-      importCurves: 1
-      createCurveRenderers: 0
-    mediaStartTime: 0
-    mediaEndTime: 0
-  startTime: 10.666667
-  endTime: 42.666668
-  currentTime: 0
-  vertexMotionScale: 1
 --- !u!320 &7579292276967478729
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -13134,7 +13076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ad39f2b02a24b3590e6547d0eabdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceSetNames: []
 --- !u!4 &8555181954211505550
 Transform:
   m_ObjectHideFlags: 0
