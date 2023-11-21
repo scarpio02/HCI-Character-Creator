@@ -4,40 +4,56 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CategoryOnClick : MonoBehaviour, IPointerExitHandler
+public class CategoryOnClick : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public GameObject[] Cats;
     public GameObject[] traits;
     public GameObject label;
+    public bool open;
 
     void Start()
     {
-
+        open = false;
     }
 
     public void OnCategoryClick()
     {
+        foreach (GameObject Cat in Cats)
+        {
+            if (Cat.GetComponent<CategoryOnClick>().open)
+            {
+                Cat.GetComponent<CategoryOnClick>().CloseCategory();
+            }
+        }
+
         foreach (GameObject trait in traits)
         {
             trait.SetActive(true);
         }
         label.SetActive(false);
+
+        this.open = true;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void CloseCategory()
     {
         foreach (GameObject trait in traits)
         {
             trait.SetActive(false);
         }
         label.SetActive(true);
+
+        this.open = false;
     }
 
-
-    // Update is called once per frame
-    void Update()
+    /*public void OnPointerExit(PointerEventData eventData)
     {
-        
-    }
+        foreach (GameObject trait in traits)
+        {
+            trait.SetActive(false);
+        }
+        label.SetActive(true);
+    }*/
 }

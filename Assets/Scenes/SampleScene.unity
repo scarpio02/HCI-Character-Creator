@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -871,11 +871,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74ca8b8a4a424711a9ddb68e7c1bead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cats:
+  - {fileID: 720169296}
+  - {fileID: 1502640951}
+  - {fileID: 1999127844}
+  - {fileID: 1309242380}
   traits:
   - {fileID: 1169290159}
   - {fileID: 1140454733}
   - {fileID: 1705470445}
   label: {fileID: 654013428}
+  open: 0
 --- !u!1 &285724327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,11 +2936,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74ca8b8a4a424711a9ddb68e7c1bead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cats:
+  - {fileID: 1502640951}
+  - {fileID: 1999127844}
+  - {fileID: 1309242380}
+  - {fileID: 267758017}
   traits:
   - {fileID: 1958029669}
   - {fileID: 287936718}
   - {fileID: 1194793931}
   label: {fileID: 1059205151}
+  open: 0
 --- !u!1 &747598640
 GameObject:
   m_ObjectHideFlags: 0
@@ -6267,11 +6279,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74ca8b8a4a424711a9ddb68e7c1bead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cats:
+  - {fileID: 720169296}
+  - {fileID: 267758017}
+  - {fileID: 1502640951}
+  - {fileID: 1999127844}
   traits:
   - {fileID: 793727553}
   - {fileID: 1644604417}
   - {fileID: 1857070161}
   label: {fileID: 1362693923}
+  open: 0
 --- !u!1 &1323332715
 GameObject:
   m_ObjectHideFlags: 0
@@ -7733,11 +7751,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74ca8b8a4a424711a9ddb68e7c1bead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cats:
+  - {fileID: 720169296}
+  - {fileID: 267758017}
+  - {fileID: 1999127844}
+  - {fileID: 1309242380}
   traits:
   - {fileID: 1748144229}
   - {fileID: 1934266687}
   - {fileID: 1380738296}
   label: {fileID: 1620528679}
+  open: 0
 --- !u!1 &1508393988
 GameObject:
   m_ObjectHideFlags: 0
@@ -10931,11 +10955,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74ca8b8a4a424711a9ddb68e7c1bead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cats:
+  - {fileID: 720169296}
+  - {fileID: 267758017}
+  - {fileID: 1502640951}
+  - {fileID: 1309242380}
   traits:
   - {fileID: 1279987125}
   - {fileID: 989604835}
   - {fileID: 1784154945}
   label: {fileID: 1600862819}
+  open: 0
 --- !u!1 &2011705832
 GameObject:
   m_ObjectHideFlags: 0
@@ -12172,6 +12202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ad39f2b02a24b3590e6547d0eabdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faceSetNames: []
 --- !u!4 &2488844437876845552
 Transform:
   m_ObjectHideFlags: 0
@@ -12377,6 +12408,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6983ab2008f7a9f499b3f8cd6bec328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  streamSource: 1
+  streamDescriptor: {fileID: 0}
+  embeddedStreamDescriptor:
+    pathToAbc: 
+    settings:
+      normals: 1
+      tangents: 1
+      cameraAspectRatio: 2
+      importVisibility: 1
+      scaleFactor: 0.01
+      swapHandedness: 1
+      flipFaces: 0
+      interpolateSamples: 1
+      importPointPolygon: 1
+      importLinePolygon: 1
+      importTrianglePolygon: 1
+      importXform: 1
+      importCameras: 1
+      importMeshes: 1
+      importPoints: 0
+      importCurves: 1
+      createCurveRenderers: 0
+    mediaStartTime: 0
+    mediaEndTime: 0
+  startTime: -3.4028235e+38
+  endTime: 3.4028235e+38
+  currentTime: 0
+  vertexMotionScale: 1
 --- !u!4 &3354493690013309497
 Transform:
   m_ObjectHideFlags: 0
@@ -13067,6 +13126,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6983ab2008f7a9f499b3f8cd6bec328d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  streamSource: 1
+  streamDescriptor: {fileID: 0}
+  embeddedStreamDescriptor:
+    pathToAbc: 
+    settings:
+      normals: 1
+      tangents: 1
+      cameraAspectRatio: 2
+      importVisibility: 1
+      scaleFactor: 0.01
+      swapHandedness: 1
+      flipFaces: 0
+      interpolateSamples: 1
+      importPointPolygon: 1
+      importLinePolygon: 1
+      importTrianglePolygon: 1
+      importXform: 1
+      importCameras: 1
+      importMeshes: 1
+      importPoints: 0
+      importCurves: 1
+      createCurveRenderers: 0
+    mediaStartTime: 0
+    mediaEndTime: 0
+  startTime: -3.4028235e+38
+  endTime: 3.4028235e+38
+  currentTime: 0
+  vertexMotionScale: 1
 --- !u!320 &7579292276967478729
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -13226,6 +13313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ad39f2b02a24b3590e6547d0eabdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  faceSetNames: []
 --- !u!4 &8555181954211505550
 Transform:
   m_ObjectHideFlags: 0
