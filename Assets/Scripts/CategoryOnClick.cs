@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CategoryOnClick : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class CategoryOnClick : MonoBehaviour
         {
             trait.SetActive(true);
         }
-        label.SetActive(false);
+        //label.SetActive(false);
 
         this.open = true;
     }
