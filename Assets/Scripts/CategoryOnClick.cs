@@ -36,10 +36,12 @@ public class CategoryOnClick : MonoBehaviour
         //label.SetActive(false);
 
         this.open = true;
+        this.GetComponent<Button>().interactable = false;
     }
 
     public void CloseCategory()
     {
+        this.GetComponent<Button>().interactable = true;
         foreach (GameObject trait in traits)
         {
             trait.SetActive(false);
@@ -47,6 +49,7 @@ public class CategoryOnClick : MonoBehaviour
         label.SetActive(true);
 
         this.open = false;
+
     }
 
     /*public void OnPointerExit(PointerEventData eventData)
@@ -57,4 +60,6 @@ public class CategoryOnClick : MonoBehaviour
         }
         label.SetActive(true);
     }*/
+
+
 }
