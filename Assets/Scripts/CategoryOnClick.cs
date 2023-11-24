@@ -5,13 +5,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CategoryOnClick : MonoBehaviour
+public class CategoryOnClick : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     // Start is called before the first frame update
 
     public GameObject[] Cats;
     public GameObject[] traits;
     public GameObject label;
+    public GameObject description;
     public bool open;
 
     void Start()
@@ -52,14 +53,15 @@ public class CategoryOnClick : MonoBehaviour
 
     }
 
-    /*public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        foreach (GameObject trait in traits)
-        {
-            trait.SetActive(false);
-        }
-        label.SetActive(true);
-    }*/
+        description.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    { 
+        description.SetActive(false);
+    }
 
 
 }
