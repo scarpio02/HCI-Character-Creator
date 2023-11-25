@@ -20,29 +20,29 @@ public class GameController : MonoBehaviour
         GameObject.Find("Save").GetComponent<Button>().interactable = false;
 
         List<Category.Trait> traits1 = new List<Category.Trait>();
-        traits1.Add(new Category.Trait(0, "Close-minded", "Characters with this trait are resistant to new experiences and find it hard to think outside the box. They tend to stick to what they know and avoid novel situations.", GameObject.Find("Openness0")));
-        traits1.Add(new Category.Trait(1, "Open-minded", "These characters are curious about the world and are open to trying new things, but may not always seek them out actively.", GameObject.Find("Openness1")));
-        traits1.Add(new Category.Trait(2, "Visionary Explorer", "Characters with this trait have an insatiable curiosity. They are constantly seeking out new experiences, ideas, and challenges. They are often seen as innovators and thought leaders.", GameObject.Find("Openness2")));
+        traits1.Add(new Category.Trait(0, "Close-minded", "Characters with this trait are resistant \nto new experiences and find it hard \nto think outside the box. They tend to stick \nto what they know and avoid novel \nsituations.", GameObject.Find("Openness0")));
+        traits1.Add(new Category.Trait(1, "Open-minded", "These characters are curious about the world \nand are open to trying new things, but \nmay not always seek them out actively.", GameObject.Find("Openness1")));
+        traits1.Add(new Category.Trait(2, "Visionary Explorer", "Characters with this trait have an \ninsatiable curiosity. They are constantly \nseeking out new experiences, ideas, and challenges. \nThey are often seen as innovators and thought leaders.", GameObject.Find("Openness2")));
         categories.Add(new Category("Openness", traits1));
         List<Category.Trait> traits2 = new List<Category.Trait>();
-        traits2.Add(new Category.Trait(0, "Careless", "Characters with this trait can be disorganized, forgetful, and often fail to fulfill their responsibilities. They might struggle with setting and achieving goals.", GameObject.Find("Conscientiousness0")));
-        traits2.Add(new Category.Trait(1, "Conscientious", "These characters generally meet their responsibilities and are relatively organized. They try to do what's expected of them, but might sometimes fall short.", GameObject.Find("Conscientiousness1")));
-        traits2.Add(new Category.Trait(2, "Relentless Achiever", "Characters with this trait are extremely organized, responsible, and driven. They set high standards for themselves and will go above and beyond to meet their goals.", GameObject.Find("Conscientiousness2")));
+        traits2.Add(new Category.Trait(0, "Careless", "Characters with this trait can be disorganized, \nforgetful, and often fail to fulfill their \nresponsibilities. They might struggle with \nsetting and achieving goals.", GameObject.Find("Conscientiousness0")));
+        traits2.Add(new Category.Trait(1, "Conscientious", "These characters generally meet their \nresponsibilities and are relatively organized. \nThey try to do what's expected of them, but might \nsometimes fall short.", GameObject.Find("Conscientiousness1")));
+        traits2.Add(new Category.Trait(2, "Relentless Achiever", "Characters with this trait are extremely \norganized, responsible, and driven. They set \nhigh standards for themselves and will go \nabove and beyond to meet their goals.", GameObject.Find("Conscientiousness2")));
         categories.Add(new Category("Conscientiousness", traits2));
         List<Category.Trait> traits3 = new List<Category.Trait>();
-        traits3.Add(new Category.Trait(0, "Recluse", "Characters with this trait prefer solitude and often feel drained in social situations. They tend to avoid group activities and can be seen as loners.", GameObject.Find("Extraversion0")));
-        traits3.Add(new Category.Trait(1, "Sociable", "These characters enjoy socializing to an extent, but also appreciate alone time. They have a balance between their social and private life.", GameObject.Find("Extraversion1")));
-        traits3.Add(new Category.Trait(2, "Charismatic Dynamo", "Characters with this trait thrive in social situations and often become the life of the party. They are energetic, assertive, and draw others to them with their magnetic personality.", GameObject.Find("Extraversion2")));
+        traits3.Add(new Category.Trait(0, "Recluse", "Characters with this trait prefer solitude and \noften feel drained in social situations. They tend to \navoid group activities and can be seen as loners.", GameObject.Find("Extraversion0")));
+        traits3.Add(new Category.Trait(1, "Sociable", "These characters enjoy socializing to an extent, \nbut also appreciate alone time. They have a balance \nbetween their social and private life.", GameObject.Find("Extraversion1")));
+        traits3.Add(new Category.Trait(2, "Charismatic Dynamo", "Characters with this trait thrive in social \nsituations and often become the life of the party. \nThey are energetic, assertive, and draw \nothers to them with their magnetic personality.", GameObject.Find("Extraversion2")));
         categories.Add(new Category("Extraversion", traits3));
         List<Category.Trait> traits4 = new List<Category.Trait>();
-        traits4.Add(new Category.Trait(0, "Contrarian", "Characters with this trait can be argumentative, critical, and might have a hard time getting along with others. They often prioritize their own needs over others.", GameObject.Find("Agreeableness0")));
-        traits4.Add(new Category.Trait(1, "Amicable", "These characters generally get along with others and try to maintain harmony. They may occasionally have disagreements but generally value relationships.", GameObject.Find("Agreeableness1")));
-        traits4.Add(new Category.Trait(2, "Empathic Diplomat", "Characters with this trait are extremely understanding, kind, and value harmony above all else. They often go out of their way to help others and avoid conflicts.", GameObject.Find("Agreeableness2")));
+        traits4.Add(new Category.Trait(0, "Contrarian", "Characters with this trait can be argumentative, \ncritical, and might have a hard time getting \nalong with others. They often prioritize their \nown needs over others.", GameObject.Find("Agreeableness0")));
+        traits4.Add(new Category.Trait(1, "Amicable", "These characters generally get along with others and \ntry to maintain harmony. They may occasionally have \ndisagreements but generally value relationships.", GameObject.Find("Agreeableness1")));
+        traits4.Add(new Category.Trait(2, "Empathic Diplomat", "Characters with this trait are extremely understanding, \nkind, and value harmony above all else. They often \ngo out of their way to help others and avoid \nconflicts.", GameObject.Find("Agreeableness2")));
         categories.Add(new Category("Agreeableness", traits4));
         List<Category.Trait> traits5 = new List<Category.Trait>();
-        traits5.Add(new Category.Trait(0, "Volatile", "Characters with this trait are often emotionally unstable, experiencing frequent mood swings and high levels of stress. They can be seen as unpredictable.", GameObject.Find("Neuroticism0")));
-        traits5.Add(new Category.Trait(1, "Balanced", "These characters have a reasonable handle on their emotions. They experience ups and downs, but generally can manage their reactions and stress levels.", GameObject.Find("Neuroticism1")));
-        traits5.Add(new Category.Trait(2, "Steadfast Optimist", "Characters with this trait are exceptionally emotionally stable and often maintain a positive outlook. They handle stress with grace and are rarely shaken by negative events.", GameObject.Find("Neuroticism2")));
+        traits5.Add(new Category.Trait(0, "Volatile", "Characters with this trait are often emotionally unstable, \nexperiencing frequent mood swings and high levels \nof stress. They can be seen as unpredictable.", GameObject.Find("Neuroticism0")));
+        traits5.Add(new Category.Trait(1, "Balanced", "These characters have a reasonable handle on their emotions. \nThey experience ups and downs, but generally can \nmanage their reactions and stress levels.", GameObject.Find("Neuroticism1")));
+        traits5.Add(new Category.Trait(2, "Steadfast Optimist", "Characters with this trait are exceptionally emotionally stable \nand often maintain a positive outlook. They handle \nstress with grace and are rarely shaken by \nnegative events.", GameObject.Find("Neuroticism2")));
         categories.Add(new Category("Neuroticism", traits5));
     }
 
