@@ -30,11 +30,11 @@ public class TraitOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             {
                 if ((gameObject.name == cat.traits[i].GetName()) && hover)
                 {
-                    gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = cat.traits[i].GetName() + " | Cost: " + cat.traits[i].GetPTString() + "\n" + cat.traits[i].GetDescription();
+                    gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = cat.traits[i].GetName() + " | Cost: " + cat.traits[i].GetPTString() + "\n" + cat.traits[i].GetDescription();
                 }
                 else if((gameObject.name == cat.traits[i].GetName()) && !hover)
                 {
-                    gameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = cat.traits[i].GetName();
+                    gameObject.transform.GetChild(0).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = cat.traits[i].GetName();
                 }
             }
         }
