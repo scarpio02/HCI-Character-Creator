@@ -46,12 +46,6 @@ public class GameController : MonoBehaviour
         categories.Add(new Category("Neuroticism", traits5));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SelectTrait(int traitNum){
         int categoryNum = traitNum / 3;
         int traitIndex = traitNum % 3;
@@ -229,10 +223,13 @@ public class Category
         selected = traitNum;
         for (int i = 0; i < traits.Count; i++){
             if (i != traitNum){
+                GameObject.Find(traits[i].GetName()).GetComponent<Button>().interactable = true;
+
                 traits[i].Deselect();
             }
             else{
                 traits[i].Select();
+                GameObject.Find(traits[i].GetName()).GetComponent<Button>().interactable = false;
             }
         }
     }

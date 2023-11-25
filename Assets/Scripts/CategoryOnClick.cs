@@ -38,6 +38,8 @@ public class CategoryOnClick : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
         this.open = true;
         this.GetComponent<Button>().interactable = false;
+        description.SetActive(false);
+
     }
 
     public void CloseCategory()
@@ -55,7 +57,11 @@ public class CategoryOnClick : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        description.SetActive(true);
+        if (!this.open)
+        {
+            description.SetActive(true);
+        }
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
