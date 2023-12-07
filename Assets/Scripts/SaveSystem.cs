@@ -17,6 +17,8 @@ public static class SaveSystem
 
         formatter.Serialize(stream, data);
         stream.Close();
+        Debug.LogError("Saved Game!");
+
     }
 
     public static GameData LoadGame()
@@ -29,7 +31,7 @@ public static class SaveSystem
 
             GameData data = formatter.Deserialize(stream) as GameData;
             stream.Close();
-
+            Debug.LogError("Loaded Game!");
             return data;
         }
         else
