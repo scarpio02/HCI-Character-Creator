@@ -13,30 +13,31 @@ public class ButtonOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     void Start()
     {
-        
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+
         foreach (GameObject trait in traits)
         {
-            trait.SetActive(true);
+            trait.transform.Translate(new Vector3(0, .2f, 0), Space.World);
         }
-        label.SetActive(false);
+        //label.SetActive(false);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         foreach (GameObject trait in traits)
         {
-            trait.SetActive(false);
+            trait.transform.Translate(new Vector3(0, -.2f, 0), Space.World);
         }
-        label.SetActive(true);
+        //label.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
