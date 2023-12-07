@@ -96,10 +96,16 @@ public class GameController : MonoBehaviour
     {
         GameData data = SaveSystem.LoadGame();
         loadConfirmationPanel.SetActive(true);
+
+        for (int i = 0; i < categories.Count; i++)
+        {
+            categories[i].DeselectAll();
+        }
         psychTokens = 6;
 
         for (int i = 0; i < data.traits.Length; i++)
         {
+
             if (data.traits[i])
             {
                 SelectTrait(i);
@@ -223,14 +229,32 @@ public class Category
         selected = traitNum;
         for (int i = 0; i < traits.Count; i++){
             if (i != traitNum){
-                GameObject.Find(traits[i].GetName()).GetComponent<Button>().interactable = true;
+                //GameObject.Find(traits[i].GetName()).GetComponent<Button>().interactable = true;
+                GameObject.Find(categoryName).transform.GetChild(2+i).GetComponent<Button>().interactable = true;
 
                 traits[i].Deselect();
             }
             else{
                 traits[i].Select();
-                GameObject.Find(traits[i].GetName()).GetComponent<Button>().interactable = false;
+                //GameObject.Find(traits[i].GetName()).GetComponent<Button>().interactable = false;
+                GameObject.Find(categoryName).transform.GetChild(2 + i).GetComponent<Button>().interactable = false;
             }
+        }
+    }
+
+    public void DeselectAll()
+    {
+        isTraitSelected = false;
+        selected = 0;
+        for (int i = 0; i < traits.Count; i++)
+        {
+            //GameObject.Find(traits[i].GetName()).SetActive(true);
+
+            GameObject.Find(categoryName).transform.GetChild(2 + i).GetComponent<Button>().interactable = true;
+            traits[i].Deselect();
+            //GameObject.Find(traits[i].GetName()).SetActive(false);
+
+
         }
     }
 

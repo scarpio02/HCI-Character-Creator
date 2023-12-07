@@ -15,6 +15,7 @@ public class GameData
             for (int j = 0; j < 3; j++)
             {
                 traits[i * 3 + j] = categories[i].traits[j].GetIsSelected();
+                Debug.LogError( (i * 3 + j) + " is " + traits[i * 3 + j]);
             }
         }
     }
